@@ -1,2 +1,2 @@
 console.log("hello");
-console.log("feature2");
+console.log("feature 2");
