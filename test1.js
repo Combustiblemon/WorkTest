@@ -15,6 +15,6 @@ const cars = [
 	}
 ];
 
- const carsAfter2001 = cars.filter(item => item.year > 2001) ;
+ const carsAfter2001 = cars.filter(item => item.year > 2001);
 
  console.log("carsAfter2001", carsAfter2001);

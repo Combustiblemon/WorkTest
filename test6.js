@@ -23,7 +23,7 @@ const cars = [
 //b)
 
 	const transform = (cars, idProp) =>  cars.reduce((acc, cur) => {
-        const props = Object.entries(cur).filter(item => item[0] != idProp)
+        const props = Object.entries(cur).filter(item => item[0] != idProp);
         // console.log(Object.fromEntries(props))
         return{
             ...acc,
