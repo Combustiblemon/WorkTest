@@ -1,0 +1,7 @@
+✔    padding
+✔    font
+✔    font sizes
+    αποστασεις tags/γενικα
+✔    try catch
+
+✔    να κανω button => props: (type, size, text, stretch)
