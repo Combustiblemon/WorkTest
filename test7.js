@@ -16,21 +16,21 @@
 //  *if you buy 3 oranges you get 1 of them free*
 //  *Modifying your existing code, calculate the total price of the following basket:*
 //  *apple, apple, orange, apple, orange, orange, apple, apple*
-//  - In 5 apples the 2 apples of them are free, in 8 oranges the 3 oranges of them are free
+//  - In 5 apples the 2 apples of them are free, in 8 oranges the 2 oranges of them are free
 // 2 options to solve it:
 // 1: Υπολογισμός προσφορών κατά το σκανάρισμα
 // 2: Υπολογισμός προσφορών στο άθροισμα
 
 
 
-const shoppingCart = ["apple", "apple", "orange", "apple", "orange", "orange", "apple", "apple"];
+const shoppingCart = ["apple", "apple", "orange", "apple", "orange", "orange", "apple", "apple", "orange", "orange", "orange", "orange", "orange", "orange",];
 
 const products = {
     apple: {
-        price: 0.12
+        price: 12
     },
     orange: {
-        price:0.32
+        price: 32
     }
 };
 
@@ -49,7 +49,7 @@ const offers1 = {
 
 const cost = shoppingCart.reduce((acc, cur) => acc + products[cur].price, 0);
 
-console.log(cost);
+console.log(cost/100);
 
 const calculateDiscount = (shoppingCart, offers) => {
     const offerCount = {};
@@ -59,7 +59,9 @@ const calculateDiscount = (shoppingCart, offers) => {
             if(offerCount[cur] >= offers[cur].amount){
                 offerCount[cur] = 0;
                 console.log(cur)
-                // subtracts amount equal to the price of the product times one less than the amount needed for the offer to work (because it isn't adding one from this iteration so it comes out to equal to the offer)
+                // subtracts amount equal to the price of the product times one less than
+                // the amount needed for the offer to work (because it isn't adding one from
+                // this iteration so it comes out to equal to the offer)
                 return acc - (offers[cur].offer - 1) * products[cur].price
             }
             return acc + products[cur].price
@@ -67,7 +69,7 @@ const calculateDiscount = (shoppingCart, offers) => {
     0);
 }
 
-console.log(calculateDiscount(shoppingCart, offers1));
+console.log(calculateDiscount(shoppingCart, offers1)/100);
 
 const offers2 = {
     apple: {
@@ -80,4 +82,4 @@ const offers2 = {
     }
 };
 
-console.log(calculateDiscount(shoppingCart, offers2));
+console.log(calculateDiscount(shoppingCart, offers2)/100);

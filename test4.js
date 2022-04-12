@@ -22,12 +22,12 @@ const newCars4 = (cars = [], idProp) =>  {
         // console.log(Object.entries(cur))
         return {
             ...acc,
-            [cur[idProp]]: Object.entries(cur).filter(item => item[0] != idProp)[0][1]
-
+            // [cur[idProp]]: Object.entries(cur).filter(([key, value]) => key != idProp)[0][1]
+            [cur[idProp]]:  cur[Object.keys(cur).filter((key) => key != idProp)[0]]
         }
     }, {})
 };
 
-const carsTransformed = newCars4(cars,"brand");
+const carsTransformed = newCars4(cars,"year");
 
 console.log('carsTransformed', carsTransformed);
