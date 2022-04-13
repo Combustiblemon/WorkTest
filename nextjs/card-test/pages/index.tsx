@@ -6,7 +6,9 @@ import { Wrapper } from '../styles/index.styles';
 const Home: NextPage = () => {
   return (
     <Wrapper>
-      <Card />
+      <Card tooltip="forsenE" shadow statusSize="big">
+        GFM Bajs
+      </Card>
     </Wrapper>
   );
 };

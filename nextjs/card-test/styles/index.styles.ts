@@ -1,14 +1,13 @@
 import styled from 'styled-components';
 
-import { gray2 } from '../modules/colors';
-
 export const Wrapper = styled.div`
   height: 600px;
-  width: 600px;
+  width: 800px;
 
-  background-color: ${gray2};
+  background-color: lightgray;
 
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 50px;
 `;
