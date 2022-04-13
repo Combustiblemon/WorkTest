@@ -29,6 +29,8 @@ export const Wrapper = styled.div<{
 
   border-radius: 8px;
 
+  /* if disabled=true then disable the pointer events
+     and change the background color */
   ${(props) =>
     props.disabled &&
     `pointer-events: none;
@@ -57,6 +59,8 @@ const statusStyle = {
 };
 
 export const Status = styled.div<{
+  // i don't like these being union types but
+  // typescript is weird
   size: 'big' | 'small';
   color: 'rejected' | 'active' | 'disabled';
 }>`
@@ -68,4 +72,6 @@ export const Status = styled.div<{
 
 export const Content = styled.div`
   padding: 10px;
+  display: flex;
+  flex-direction: row;
 `;
