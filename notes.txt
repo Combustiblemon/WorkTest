@@ -1,0 +1,8 @@
+card component:
+    status
+    children
+    classname
+    tooltip
+    onClick
+
+fleet component:
