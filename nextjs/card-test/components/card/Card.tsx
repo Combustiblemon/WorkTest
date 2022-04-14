@@ -26,13 +26,15 @@ const Card = ({
   shadow,
   statusColor = 'disabled',
   statusSize,
-  tooltip = ' ',
+  tooltip = '',
 }: CardPropType) => {
   return (
     <Tooltip
       TransitionComponent={Zoom}
       TransitionProps={{ timeout: 600 }}
       title={tooltip}
+      arrow
+      placement="top"
     >
       <Wrapper
         className={className}

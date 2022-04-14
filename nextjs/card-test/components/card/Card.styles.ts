@@ -1,14 +1,14 @@
 import { green, red } from '@mui/material/colors';
 import styled from 'styled-components';
 
-import { black, gray1, gray2, gray4, gray5, white } from '../../modules/colors';
+import { black, gray1, gray2, gray3, gray6, white } from '../../modules/colors';
 
 const cardStyle = {
   primary: {
     backgroundColor: white,
     color: gray1,
-    hoverColor: gray4,
-    activeColor: gray5,
+    hoverColor: gray6,
+    activeColor: gray3,
     border: 'none',
   },
 };
@@ -22,6 +22,8 @@ export const Wrapper = styled.div<{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  gap: 10px;
+  width: 100%;
 
   background-color: ${(props) => cardStyle[props.type].backgroundColor};
   ${(props) =>
@@ -71,7 +73,9 @@ export const Status = styled.div<{
 `;
 
 export const Content = styled.div`
-  padding: 10px;
+  width: 100%;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 `;
