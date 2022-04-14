@@ -6,12 +6,13 @@ import { black, white } from '../../modules/colors';
 const kind = {
   NORMAL: {
     color:
-      'invert(63%) sepia(0%) saturate(0%) hue-rotate(138deg) brightness(102%) contrast(89%)',
+      'invert(31%) sepia(0%) saturate(833%) hue-rotate(168deg) brightness(96%) contrast(86%)',
     backgroundColor: 'white',
     borderColor: black,
   },
   INVERTED: {
-    color: white,
+    color:
+      'invert(100%) sepia(100%) saturate(0%) hue-rotate(5deg) brightness(113%) contrast(100%)',
     backgroundColor: black,
     borderColor: black,
   },
@@ -26,11 +27,10 @@ export const Wrapper = styled.div<{
   kind: 'NORMAL' | 'INVERTED';
 }>`
   border-radius: 2px;
-  display: flex;
-  align-content: center;
-  justify-content: center;
+  align-self: center;
 
   width: ${(props) => size[props.size]}px;
+  min-width: ${(props) => size[props.size]}px;
   height: ${(props) => size[props.size]}px;
   background-color: ${(props) => kind[props.kind].backgroundColor};
 `;

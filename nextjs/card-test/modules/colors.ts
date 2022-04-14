@@ -4,6 +4,7 @@ export const gray3 = 'rgb(101,115,126)';
 export const gray4 = 'rgba(101,115,126, 0.5)';
 export const gray5 = 'rgba(101,115,126, 0.3)';
 export const gray6 = 'rgb(243, 243, 243)';
+export const gray7 = 'rgb(84, 84, 84)';
 export const white = 'rgb(255, 255, 255)';
 export const black = 'rgb(0, 0, 0)';
 export const red = 'rgb(255, 0, 0)';

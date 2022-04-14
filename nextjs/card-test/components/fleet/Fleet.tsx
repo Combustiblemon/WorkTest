@@ -3,27 +3,38 @@ import React from 'react';
 
 import ShipIcon from '../../public/icons/ship_icon.svg';
 import Text from '../text/Text';
-import { Arrow, Content, ShipImage, ShipInfo, Wrapper } from './Fleet.styles';
+import {
+  Arrow,
+  Content,
+  ImageContainer,
+  ShipImage,
+  ShipInfo,
+  Wrapper,
+} from './Fleet.styles';
 
 export interface FleetPropsType {
-  tooltip?: string;
-  shipPhotoSrc: string | StaticImageData;
-  shipName: string;
+  onClick?: () => void;
+  className?: string;
+  image: string | StaticImageData;
+  name: string;
   shipType: string;
 }
 
 const Fleet = ({
-  tooltip,
-  shipPhotoSrc,
-  shipName,
+  className,
+  image,
+  name,
   shipType,
+  onClick,
 }: FleetPropsType) => {
   return (
-    <Wrapper tooltip={tooltip}>
+    <Wrapper className={className} onClick={onClick}>
       <Content>
-        <ShipImage src={shipPhotoSrc} width={120} height={80} />
+        <ImageContainer>
+          <ShipImage src={image} layout="fill" objectFit="contain" />
+        </ImageContainer>
         <ShipInfo>
-          <Text iconSrc={ShipIcon}>{shipName}</Text>
+          <Text iconSrc={ShipIcon}>{name}</Text>
           <Text kind="SECONDARY">{shipType}</Text>
         </ShipInfo>
       </Content>

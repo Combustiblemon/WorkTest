@@ -20,7 +20,7 @@ const Icon = ({ src, size, kind = 'NORMAL', tooltip = '' }: IconPropsType) => {
       placement="top"
     >
       <Wrapper size={size} kind={kind}>
-        <IconImage src={src} width={40} height={40} kind={kind} />
+        <IconImage src={src} width={30} height={30} kind={kind} />
       </Wrapper>
     </Tooltip>
   );

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { gray3 } from '../../modules/colors';
+import { gray7 } from '../../modules/colors';
 
 export const Wrapper = styled.span`
   display: flex;
@@ -11,13 +11,13 @@ export const Wrapper = styled.span`
 const kind = {
   MAIN: {
     fontSize: 20,
-    color: gray3,
+    color: gray7,
     fontWeight: 500,
   },
 
   SECONDARY: {
     fontSize: 16,
-    color: gray3,
+    color: gray7,
     fontWeight: 500,
   },
 };

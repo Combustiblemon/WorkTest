@@ -1,13 +1,11 @@
 import Image from 'next/image';
 import styled from 'styled-components';
 
-import { gray3 } from '../../modules/colors';
 import Card from '../card/Card';
 
 export const Wrapper = styled(Card)`
-  padding-top: 7px;
-  padding-bottom: 7px;
   padding-right: 20px;
+  max-height: 100px;
 
   display: flex;
   flex-direction: row;
@@ -15,35 +13,15 @@ export const Wrapper = styled(Card)`
   align-content: center;
 `;
 
-export const ImageContainer = styled.div`
-  position: relative;
-  height: 80px;
-  width: 100px;
-`;
+export const DisplayImage = styled(Image)``;
 
-export const ShipImage = styled(Image)``;
-
-export const Arrow = styled(Image)``;
-
-export const ShipInfo = styled.div`
+export const Info = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
-  gap: 8px;
-`;
-
-export const ShipName = styled.span`
-  font-size: 20px;
-  color: ${gray3};
-  font-weight: 500;
-`;
-
-export const ShipClass = styled.span`
-  font-size: 16px;
-  color: ${gray3};
-  font-weight: 500;
+  max-width: 170px;
 `;
 
 export const Content = styled.div`
@@ -51,5 +29,13 @@ export const Content = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  gap: 35px;
+  gap: 25px;
+`;
+
+export const Arrow = styled(Image)``;
+
+export const ImageContainer = styled.div`
+  position: relative;
+  height: 100px;
+  width: 100px;
 `;
