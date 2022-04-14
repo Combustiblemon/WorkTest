@@ -1,14 +1,12 @@
 import type { NextPage } from 'next';
 
-import Card from '../components/card/Card';
+import Fleet from '../components/fleet/Fleet';
 import { Wrapper } from '../styles/index.styles';
 
 const Home: NextPage = () => {
   return (
     <Wrapper>
-      <Card tooltip="forsenE" shadow statusSize="big">
-        GFM Bajs
-      </Card>
+      <Fleet />
     </Wrapper>
   );
 };

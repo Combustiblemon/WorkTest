@@ -1,13 +1,14 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
-  height: 600px;
-  width: 800px;
+  max-height: 600px;
+  width: 420px;
+  padding: 100px;
 
   background-color: lightgray;
 
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 50px;
+  gap: 150px;
 `;
