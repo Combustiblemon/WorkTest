@@ -18,7 +18,7 @@ const kind = {
 };
 
 const size = {
-  SMALL: 20,
+  SMALL: 30,
 };
 
 export const Wrapper = styled.div<{
@@ -26,6 +26,9 @@ export const Wrapper = styled.div<{
   kind: 'NORMAL' | 'INVERTED';
 }>`
   border-radius: 2px;
+  display: flex;
+  align-content: center;
+  justify-content: center;
 
   width: ${(props) => size[props.size]}px;
   height: ${(props) => size[props.size]}px;

@@ -1,28 +1,32 @@
+import { StaticImageData } from 'next/image';
 import React from 'react';
 
 import ShipIcon from '../../public/icons/ship_icon.svg';
-import ShipPhoto from '../../public/ship1.jpg';
-import Icon from '../icon/Icon';
-import {
-  Arrow,
-  ShipClass,
-  ShipImage,
-  ShipInfo,
-  ShipName,
-  Wrapper,
-} from './Fleet.styles';
+import Text from '../text/Text';
+import { Arrow, Content, ShipImage, ShipInfo, Wrapper } from './Fleet.styles';
 
-const Fleet = () => {
+export interface FleetPropsType {
+  tooltip?: string;
+  shipPhotoSrc: string | StaticImageData;
+  shipName: string;
+  shipType: string;
+}
+
+const Fleet = ({
+  tooltip,
+  shipPhotoSrc,
+  shipName,
+  shipType,
+}: FleetPropsType) => {
   return (
-    <Wrapper tooltip="i am a fleet component">
-      <ShipImage src={ShipPhoto} width={120} height={100} />
-      <ShipInfo>
-        <div>
-          <Icon src={ShipIcon} size="SMALL" />
-          <ShipName>Borealis</ShipName>
-        </div>
-        <ShipClass>Supply Vessel</ShipClass>
-      </ShipInfo>
+    <Wrapper tooltip={tooltip}>
+      <Content>
+        <ShipImage src={shipPhotoSrc} width={120} height={80} />
+        <ShipInfo>
+          <Text iconSrc={ShipIcon}>{shipName}</Text>
+          <Text kind="SECONDARY">{shipType}</Text>
+        </ShipInfo>
+      </Content>
       <Arrow src="/icons/right_chevron.svg" width={40} height={40} />
     </Wrapper>
   );

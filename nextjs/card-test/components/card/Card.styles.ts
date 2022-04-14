@@ -19,10 +19,6 @@ export const Wrapper = styled.div<{
   disabled?: boolean;
   type: 'primary';
 }>`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  gap: 10px;
   width: 100%;
 
   background-color: ${(props) => cardStyle[props.type].backgroundColor};

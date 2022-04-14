@@ -5,7 +5,7 @@ import { gray3 } from '../../modules/colors';
 import Card from '../card/Card';
 
 export const Wrapper = styled(Card)`
-  max-height: 100px;
+  max-height: 80px;
   padding-top: 7px;
   padding-bottom: 7px;
   padding-right: 20px;
@@ -16,13 +16,12 @@ export const ShipImage = styled(Image)``;
 export const Arrow = styled(Image)``;
 
 export const ShipInfo = styled.div`
-  margin-left: 20px;
-  margin-right: 20px;
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 8px;
 `;
 
 export const ShipName = styled.span`
@@ -35,4 +34,12 @@ export const ShipClass = styled.span`
   font-size: 16px;
   color: ${gray3};
   font-weight: 500;
+`;
+
+export const Content = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 35px;
 `;
