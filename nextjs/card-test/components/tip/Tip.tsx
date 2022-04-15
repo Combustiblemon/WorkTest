@@ -11,7 +11,7 @@ export interface IconPropsType {
   message?: boolean;
   onClick?: () => void;
   shadow?: boolean;
-  size?: 'SMALL';
+  size?: 'sm';
   text?: string;
   tooltip?: string;
 }
@@ -29,7 +29,7 @@ const Tip = ({
   message,
   onClick,
   shadow,
-  size,
+  size = 'sm',
   text,
   tooltip = '',
 }: IconPropsType) => {
@@ -41,7 +41,12 @@ const Tip = ({
       arrow
       placement="top"
     >
-      <Wrapper className={className} themes={theme} onClick={onClick}>
+      <Wrapper
+        className={className}
+        themes={theme}
+        onClick={onClick}
+        size={size}
+      >
         {message ? <Notification /> : null}
         {icon ? <Icon src={icons[icon]} color={iconColor} /> : null}
         {text ? <Text>{text}</Text> : null}

@@ -26,16 +26,21 @@ export const iconColors = {
     'invert(100%) sepia(100%) saturate(0%) hue-rotate(5deg) brightness(113%) contrast(100%)',
 };
 
+const size = {
+  sm: 15,
+};
+
 export const Wrapper = styled.div<{
   // theme doesn't pass so themes it is
   themes: 'LIGHT' | 'DARK';
+  size: 'sm';
 }>`
   margin: 0px 3px;
 
   position: relative;
   padding: 2px;
   border-radius: 4px;
-  height: 15px;
+  height: ${(props) => size[props.size]}px;
   border: ${(props) => theme[props.themes].border};
   background-color: ${(props) => theme[props.themes].backgroundColor};
 
