@@ -41,6 +41,8 @@ export const Wrapper = styled.div<{
   statusColor?: 'OFFERS_RECEIVED' | 'NO_OFFERS' | 'COMPLETED';
   kind: 'primary';
 }>`
+  //position here is used for the placement of the shadow animation
+  position: relative;
   width: 100%;
 
   background-color: ${(props) => cardStyle[props.kind].backgroundColor};
@@ -64,7 +66,24 @@ export const Wrapper = styled.div<{
 
   :hover {
     background-color: ${(props) => cardStyle[props.kind].hoverColor};
-    /* box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.5); */
+  }
+
+  // prerender the shadow and hide it
+  ::before {
+    content: '';
+    position: absolute;
+    left: -8px;
+    width: 101%;
+    height: 100%;
+    border-radius: 8px;
+    box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  // show the shadow
+  :hover::before {
+    opacity: 1;
   }
 
   :active {
