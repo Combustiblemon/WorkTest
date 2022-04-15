@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 
 import {
-  black,
   gray1,
   gray2,
   gray3,
   gray6,
-  green,
-  red,
+  lightBlue,
+  lightGray,
+  lightGreen,
   white,
 } from '../../modules/colors';
 
@@ -27,9 +27,9 @@ const statusStyle = {
     small: 5,
   },
   color: {
-    rejected: red,
-    active: green,
-    disabled: black,
+    OFFERS_RECEIVED: lightBlue,
+    NO_OFFERS: lightGray,
+    COMPLETED: lightGreen,
   },
 };
 
@@ -38,14 +38,14 @@ export const Wrapper = styled.div<{
   shadow?: boolean;
   disabled?: boolean;
   statusSize: 'big' | 'small';
-  statusColor?: 'rejected' | 'active' | 'disabled';
+  statusColor?: 'OFFERS_RECEIVED' | 'NO_OFFERS' | 'COMPLETED';
   kind: 'primary';
 }>`
   width: 100%;
 
   background-color: ${(props) => cardStyle[props.kind].backgroundColor};
   ${(props) =>
-    props.shadow && 'box-shadow: 10px 10px 12px 5px rgba(0,0,0,0.14);'}
+    props.shadow && 'box-shadow: 8px 5px 15px -4px rgba(0,0,0,0.30);'}
 
   border-radius: 8px;
   border-left: ${(props) =>

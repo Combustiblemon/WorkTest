@@ -10,7 +10,7 @@ export interface CardPropType {
   disabled?: boolean;
   onClick?: () => void;
   shadow?: boolean;
-  statusColor?: 'rejected' | 'active' | 'disabled';
+  statusColor?: 'OFFERS_RECEIVED' | 'NO_OFFERS' | 'COMPLETED';
   statusSize?: 'big' | 'small';
   tooltip?: string;
   kind?: 'primary';

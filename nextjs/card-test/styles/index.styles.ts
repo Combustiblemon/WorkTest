@@ -3,9 +3,8 @@ import styled from 'styled-components';
 import { gray8 } from '../modules/colors';
 
 export const Wrapper = styled.div`
-  max-height: 600px;
-  width: 420px;
-  padding: 100px;
+  width: 800px;
+  padding: 30px;
 
   background-color: ${gray8};
 
@@ -13,5 +12,4 @@ export const Wrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 150px;
 `;
