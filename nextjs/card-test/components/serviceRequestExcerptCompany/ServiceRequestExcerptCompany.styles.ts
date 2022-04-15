@@ -6,15 +6,14 @@ export const Wrapper = styled(Card)`
   display: flex;
   justify-content: space-between;
   margin: 5px;
+  /* column-count: 3; */
 `;
 
 export const Content = styled.div`
-  /* display: flex;
+  display: flex;
   justify-content: space-between;
-  align-content: flex-start; */
-  column-count: 2;
-
-  width: 100%;
+  align-content: flex-start;
+  /* column-count: 2; */
   margin: 8px;
 `;
 
@@ -22,6 +21,7 @@ export const ItemContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  min-width: 300px;
 `;
 
 export const ExtraInfo = styled.div`
