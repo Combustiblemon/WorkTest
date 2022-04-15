@@ -1,7 +1,15 @@
-import { green, red } from '@mui/material/colors';
 import styled from 'styled-components';
 
-import { black, gray1, gray2, gray3, gray6, white } from '../../modules/colors';
+import {
+  black,
+  gray1,
+  gray2,
+  gray3,
+  gray6,
+  green,
+  red,
+  white,
+} from '../../modules/colors';
 
 const cardStyle = {
   primary: {
@@ -13,19 +21,38 @@ const cardStyle = {
   },
 };
 
+const statusStyle = {
+  size: {
+    big: 8,
+    small: 5,
+  },
+  color: {
+    rejected: red,
+    active: green,
+    disabled: black,
+  },
+};
+
 export const Wrapper = styled.div<{
   border?: boolean;
   shadow?: boolean;
   disabled?: boolean;
-  type: 'primary';
+  statusSize: 'big' | 'small';
+  statusColor?: 'rejected' | 'active' | 'disabled';
+  kind: 'primary';
 }>`
   width: 100%;
 
-  background-color: ${(props) => cardStyle[props.type].backgroundColor};
+  background-color: ${(props) => cardStyle[props.kind].backgroundColor};
   ${(props) =>
-    props.shadow && 'box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.5);'}
+    props.shadow && 'box-shadow: 10px 10px 12px 5px rgba(0,0,0,0.14);'}
 
   border-radius: 8px;
+  border-left: ${(props) =>
+    props.statusColor
+      ? `${statusStyle.size[props.statusSize]}px solid
+      ${statusStyle.color[props.statusColor]}`
+      : 'none'};
 
   /* if disabled=true then disable the pointer events
      and change the background color */
@@ -36,42 +63,11 @@ export const Wrapper = styled.div<{
     `}
 
   :hover {
-    background-color: ${(props) => cardStyle[props.type].hoverColor};
+    background-color: ${(props) => cardStyle[props.kind].hoverColor};
+    /* box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.5); */
   }
 
   :active {
-    background-color: ${(props) => cardStyle[props.type].activeColor};
+    background-color: ${(props) => cardStyle[props.kind].activeColor};
   }
-`;
-
-const statusStyle = {
-  size: {
-    big: 10,
-    small: 5,
-  },
-  color: {
-    rejected: red,
-    active: green,
-    disabled: black,
-  },
-};
-
-export const Status = styled.div<{
-  // i don't like these being union types but
-  // typescript is weird
-  size: 'big' | 'small';
-  color: 'rejected' | 'active' | 'disabled';
-}>`
-  border-top-left-radius: 8px;
-  border-bottom-left-radius: 8px;
-  width: ${(props) => `${statusStyle.size[props.size]}px`};
-  background-color: ${(props) => `${statusStyle.color[props.color]}`};
-`;
-
-export const Content = styled.div`
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
 `;

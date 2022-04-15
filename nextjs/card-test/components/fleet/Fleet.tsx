@@ -28,7 +28,7 @@ const Fleet = ({
   onClick,
 }: FleetPropsType) => {
   return (
-    <Wrapper className={className} onClick={onClick}>
+    <Wrapper className={className} onClick={onClick} shadow>
       <Content>
         <ImageContainer>
           <ShipImage src={image} layout="fill" objectFit="contain" />
@@ -38,7 +38,7 @@ const Fleet = ({
           <Text kind="SECONDARY">{shipType}</Text>
         </ShipInfo>
       </Content>
-      <Arrow src="/icons/right_chevron.svg" width={40} height={40} />
+      <Arrow src="/icons/right_chevron.svg" alt="" />
     </Wrapper>
   );
 };

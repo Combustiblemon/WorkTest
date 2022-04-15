@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import styled from 'styled-components';
 
-import { black, white } from '../../modules/colors';
+import { black } from '../../modules/colors';
 
 const kind = {
   NORMAL: {

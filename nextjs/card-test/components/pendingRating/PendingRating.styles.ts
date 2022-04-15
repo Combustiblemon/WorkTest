@@ -4,8 +4,7 @@ import styled from 'styled-components';
 import Card from '../card/Card';
 
 export const Wrapper = styled(Card)`
-  padding-right: 20px;
-  max-height: 100px;
+  width: 100%;
 
   display: flex;
   flex-direction: row;
@@ -13,29 +12,34 @@ export const Wrapper = styled(Card)`
   align-content: center;
 `;
 
-export const DisplayImage = styled(Image)``;
-
-export const Info = styled.div`
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-start;
-  max-width: 170px;
-`;
-
 export const Content = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  gap: 25px;
+  max-width: 280px;
 `;
-
-export const Arrow = styled(Image)``;
 
 export const ImageContainer = styled.div`
   position: relative;
   height: 100px;
-  width: 100px;
+  width: 112px;
+`;
+
+export const DisplayImage = styled(Image)``;
+
+export const Info = styled.div`
+  margin-left: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 170px;
+`;
+
+export const Arrow = styled.img`
+  width: 40px;
+  height: 40px;
+  margin: auto;
+  margin-left: 0px;
+  margin-right: 20px;
 `;

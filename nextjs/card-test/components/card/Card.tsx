@@ -1,11 +1,11 @@
 import { Tooltip, Zoom } from '@mui/material';
 import React, { ReactNode } from 'react';
 
-import { Content, Status, Wrapper } from './Card.styles';
+import { Wrapper } from './Card.styles';
 
 export interface CardPropType {
   border?: boolean;
-  children?: ReactNode;
+  children: ReactNode;
   className?: string;
   disabled?: boolean;
   onClick?: () => void;
@@ -13,19 +13,19 @@ export interface CardPropType {
   statusColor?: 'rejected' | 'active' | 'disabled';
   statusSize?: 'big' | 'small';
   tooltip?: string;
-  type?: 'primary';
+  kind?: 'primary';
 }
 
 const Card = ({
-  type = 'primary',
+  kind = 'primary',
   border,
   children,
   className,
   disabled,
   onClick,
   shadow,
-  statusColor = 'disabled',
-  statusSize,
+  statusColor,
+  statusSize = 'big',
   tooltip = '',
 }: CardPropType) => {
   return (
@@ -38,14 +38,17 @@ const Card = ({
     >
       <Wrapper
         className={className}
-        type={type}
+        kind={kind}
         border={border}
         shadow={shadow}
         disabled={disabled}
         onClick={onClick}
+        statusSize={statusSize}
+        statusColor={statusColor}
       >
-        {statusSize && <Status size={statusSize} color={statusColor} />}
-        <Content>{children}</Content>
+        {/* make border */}
+        {/* {statusSize && <Status size={statusSize} color={statusColor} />} */}
+        {children}
       </Wrapper>
     </Tooltip>
   );
