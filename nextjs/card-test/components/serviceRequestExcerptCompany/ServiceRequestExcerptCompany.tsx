@@ -9,9 +9,22 @@ import {
   IconContainer,
   Item,
   ItemContainer,
+  ShipInfo,
   Text,
   Wrapper,
 } from './ServiceRequestExcerptCompany.styles';
+
+const statusColor = {
+  OFFERS_RECEIVED: 'LIGHT_BLUE' as const,
+  NO_OFFERS: 'LIGHT_GRAY' as const,
+  COMPLETED: 'LIGHT_GREEN' as const,
+};
+
+const statusMessage = {
+  OFFERS_RECEIVED: 'Offers Received',
+  NO_OFFERS: 'No Offers',
+  COMPLETED: 'Completed',
+};
 
 export interface ServiceRequestExcerptCompanyPropsType {
   status: 'OFFERS_RECEIVED' | 'NO_OFFERS' | 'COMPLETED';
@@ -49,11 +62,11 @@ const ServiceRequestExcerptCompany = ({
       className={className}
       shadow
       statusSize="big"
-      statusColor={status}
+      statusColor={statusColor[status]}
       onClick={onClick}
     >
       <Content>
-        <ItemContainer>
+        <ShipInfo>
           <Item>
             <Icon src="/icons/cog.svg" />
             <Text>{equipments}</Text>
@@ -62,7 +75,7 @@ const ServiceRequestExcerptCompany = ({
             <Icon src="/icons/ship_icon.svg" />
             <Text>{shipName}</Text>
           </Item>
-        </ItemContainer>
+        </ShipInfo>
         <ItemContainer>
           <Item>
             <Icon src="/icons/old_key.svg" />
@@ -75,11 +88,15 @@ const ServiceRequestExcerptCompany = ({
         </ItemContainer>
       </Content>
       <ExtraInfo>
-        <Status status={status} />
+        <Status
+          color={statusColor[status]}
+          text={statusMessage[status]}
+          tooltip="hello"
+        />
         <IconContainer>
           {hasNewMessage ? <Tip icon="MESSAGE" message /> : null}
           {travellingSuppliersAllowed ? <Tip icon="TRAVEL" /> : null}
-          {totalOffers > 0 ? (
+          {totalOffers ? (
             <Tip text={totalOffers.toString()} message={hasNotification} />
           ) : null}
         </IconContainer>

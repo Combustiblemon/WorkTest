@@ -4,16 +4,17 @@ import styled from 'styled-components';
 import { lightBlue, lightGray, lightGreen, white } from '../../modules/colors';
 
 const statusColor = {
-  OFFERS_RECEIVED: lightBlue,
-  NO_OFFERS: lightGray,
-  COMPLETED: lightGreen,
+  LIGHT_BLUE: lightBlue,
+  LIGHT_GRAY: lightGray,
+  LIGHT_GREEN: lightGreen,
 };
 
 export const Wrapper = styled(Tooltip)<{
-  status: 'OFFERS_RECEIVED' | 'NO_OFFERS' | 'COMPLETED';
+  // more modular
+  color: 'LIGHT_BLUE' | 'LIGHT_GRAY' | 'LIGHT_GREEN';
 }>`
   border-radius: 9999px;
-  background-color: ${(props) => statusColor[props.status]};
+  background-color: ${(props) => statusColor[props.color]};
 
   white-space: nowrap;
   padding: 2px 15px;

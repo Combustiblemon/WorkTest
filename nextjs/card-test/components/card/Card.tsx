@@ -10,7 +10,7 @@ export interface CardPropType {
   disabled?: boolean;
   onClick?: () => void;
   shadow?: boolean;
-  statusColor?: 'OFFERS_RECEIVED' | 'NO_OFFERS' | 'COMPLETED';
+  statusColor?: 'LIGHT_BLUE' | 'LIGHT_GRAY' | 'LIGHT_GREEN';
   statusSize?: 'big' | 'small';
   tooltip?: string;
   kind?: 'primary';
@@ -46,8 +46,6 @@ const Card = ({
         statusSize={statusSize}
         statusColor={statusColor}
       >
-        {/* make border */}
-        {/* {statusSize && <Status size={statusSize} color={statusColor} />} */}
         {children}
       </Wrapper>
     </Tooltip>

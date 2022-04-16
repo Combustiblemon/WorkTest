@@ -4,27 +4,22 @@ import React from 'react';
 import { Wrapper } from './Status.styles';
 
 export interface StatusPropsType {
-  status: 'OFFERS_RECEIVED' | 'NO_OFFERS' | 'COMPLETED';
+  color: 'LIGHT_BLUE' | 'LIGHT_GRAY' | 'LIGHT_GREEN';
+  text: string;
+  tooltip?: string;
 }
 
-const statusMessage = {
-  OFFERS_RECEIVED: 'Offers Received',
-  NO_OFFERS: 'No Offers',
-  COMPLETED: 'Completed',
-};
-
-const Status = ({ status }: StatusPropsType) => {
+const Status = ({ color, text, tooltip = '' }: StatusPropsType) => {
   return (
     <Wrapper
       TransitionComponent={Zoom}
       TransitionProps={{ timeout: 300 }}
-      title={statusMessage[status]}
+      title={tooltip}
       arrow
       placement="top"
-      status={status}
+      color={color}
     >
-      <span>{statusMessage[status]}</span>
-      {/* <Wrapper status={status}>{statusMessage[status]}</Wrapper> */}
+      <span>{text}</span>
     </Wrapper>
   );
 };

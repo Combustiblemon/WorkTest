@@ -3,8 +3,8 @@ import styled from 'styled-components';
 import {
   gray1,
   gray2,
-  gray3,
   gray6,
+  gray8,
   lightBlue,
   lightGray,
   lightGreen,
@@ -16,7 +16,7 @@ const cardStyle = {
     backgroundColor: white,
     color: gray1,
     hoverColor: gray6,
-    activeColor: gray3,
+    activeColor: gray8,
     border: 'none',
   },
 };
@@ -27,9 +27,9 @@ const statusStyle = {
     small: 5,
   },
   color: {
-    OFFERS_RECEIVED: lightBlue,
-    NO_OFFERS: lightGray,
-    COMPLETED: lightGreen,
+    LIGHT_BLUE: lightBlue,
+    LIGHT_GRAY: lightGray,
+    LIGHT_GREEN: lightGreen,
   },
 };
 
@@ -38,12 +38,14 @@ export const Wrapper = styled.div<{
   shadow?: boolean;
   disabled?: boolean;
   statusSize: 'big' | 'small';
-  statusColor?: 'OFFERS_RECEIVED' | 'NO_OFFERS' | 'COMPLETED';
+  statusColor?: 'LIGHT_BLUE' | 'LIGHT_GRAY' | 'LIGHT_GREEN';
   kind: 'primary';
 }>`
   //position here is used for the placement of the shadow animation
   position: relative;
   width: 100%;
+
+  cursor: pointer;
 
   background-color: ${(props) => cardStyle[props.kind].backgroundColor};
   ${(props) =>
@@ -68,8 +70,9 @@ export const Wrapper = styled.div<{
     background-color: ${(props) => cardStyle[props.kind].hoverColor};
   }
 
-  // prerender the shadow and hide it
-  ::before {
+  /* this needs more testing */
+  /* // prerender the shadow and hide it
+  ::after {
     content: '';
     position: absolute;
     left: -8px;
@@ -82,9 +85,9 @@ export const Wrapper = styled.div<{
   }
 
   // show the shadow
-  :hover::before {
+  :hover::after {
     opacity: 1;
-  }
+  } */
 
   :active {
     background-color: ${(props) => cardStyle[props.kind].activeColor};

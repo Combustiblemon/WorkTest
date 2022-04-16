@@ -1,27 +1,41 @@
 import styled from 'styled-components';
 
+import { gray7 } from '../../modules/colors';
 import Card from '../card/Card';
 
 export const Wrapper = styled(Card)`
   display: flex;
   justify-content: space-between;
   margin: 5px;
-  /* column-count: 3; */
+  height: 66px;
+  color: ${gray7};
 `;
 
 export const Content = styled.div`
   display: flex;
-  justify-content: space-between;
-  align-content: flex-start;
-  /* column-count: 2; */
+  width: 100%;
   margin: 8px;
+`;
+
+export const ShipInfo = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  white-space: nowrap;
+  width: 100%;
+  max-width: 50%;
 `;
 
 export const ItemContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-width: 300px;
+  white-space: nowrap;
+`;
+
+export const Item = styled.div`
+  display: flex;
+  font-size: 14px;
 `;
 
 export const ExtraInfo = styled.div`
@@ -30,11 +44,7 @@ export const ExtraInfo = styled.div`
   justify-content: flex-start;
   align-items: flex-end;
   margin: 8px;
-`;
-
-export const Item = styled.div`
-  display: flex;
-  font-size: 14px;
+  width: 10%;
 `;
 
 export const Icon = styled.img`
@@ -47,7 +57,7 @@ export const Icon = styled.img`
 
 export const Text = styled.div`
   margin-left: 8px;
-  align-self: flex-end;
+  align-self: center;
 `;
 
 export const IconContainer = styled.div`

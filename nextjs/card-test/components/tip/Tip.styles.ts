@@ -35,16 +35,18 @@ export const Wrapper = styled.div<{
   themes: 'LIGHT' | 'DARK';
   size: 'sm';
 }>`
-  margin: 0px 3px;
+  margin: 0px 4px;
 
   position: relative;
-  padding: 2px;
+  padding: 3px 2px;
   border-radius: 4px;
   height: ${(props) => size[props.size]}px;
+  width: ${(props) => size[props.size] + 1}px;
   border: ${(props) => theme[props.themes].border};
   background-color: ${(props) => theme[props.themes].backgroundColor};
 
   display: flex;
+  justify-content: center;
 
   cursor: pointer;
 `;
@@ -52,7 +54,9 @@ export const Wrapper = styled.div<{
 export const Icon = styled.img<{
   color: 'BLACK' | 'WHITE';
 }>`
-  width: 15px;
+  width: 17px;
+  height: 17px;
+  align-self: center;
   filter: ${(props) => iconColors[props.color]};
 `;
 
@@ -64,7 +68,7 @@ export const Notification = styled.div`
   height: 10px;
   width: 10px;
   background-color: ${orange};
-  border-radius: 99999px;
+  border-radius: 50%;
 `;
 
 export const Text = styled.span`
